@@ -20,6 +20,19 @@ fact_superstore_sales
 
 /*
 ---------------------------------------------------------
+SELECT DATABASE
+---------------------------------------------------------
+Uses the project database containing the staging,
+fact, and supporting tables.
+---------------------------------------------------------
+*/
+
+USE AdvancedSalesAnalytics;
+GO
+
+
+/*
+---------------------------------------------------------
 BLOCK A: PRODUCT RANKING WITHIN CATEGORY
 ---------------------------------------------------------
 Ranks products by total sales within each category.
