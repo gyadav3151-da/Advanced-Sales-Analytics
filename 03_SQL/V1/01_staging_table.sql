@@ -108,7 +108,7 @@ TABLOCK
     table during the insert operation.
 */
 BULK INSERT Superstore_sales_staging
-FROM 'C:\Path\To\Your\Superstore_sales_sql_ready.csv'
+FROM 'C:\Path\To\Your\v1_superstore_sql_ready.csv'
 WITH (
 	FIRSTROW = 2,
 	FIELDTERMINATOR = '|',
