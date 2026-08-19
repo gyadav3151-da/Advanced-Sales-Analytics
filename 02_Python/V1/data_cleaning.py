@@ -15,8 +15,8 @@ import pandas as pd
 # -------------------------------
 # File Paths (Relative for GitHub)
 # -------------------------------
-INPUT_FILE = "data/raw/Superstore_sales_cleaned.csv"
-OUTPUT_FILE = "data/processed/Superstore_sales_sql_ready.csv"
+INPUT_FILE = "01_Data/csv_raw/Superstore_sales_raw.csv"
+OUTPUT_FILE = "01_Data/csv_clean/v1_superstore_sql_ready.csv"
 
 
 # -------------------------------
