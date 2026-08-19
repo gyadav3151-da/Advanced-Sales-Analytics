@@ -597,7 +597,7 @@ Detailed project documentation is available in the [`06_Docs/`](06_Docs/) direct
 
 - [Architecture](06_Docs/01_Architecture.md) — Project architecture and data flow
 - [SQL Decisions](06_Docs/02_SQL_Decisions.md) — SQL Server modeling and analytical decisions
-- [Power BI & DAX Decisions](06_Ddocs/03_PowerBI_DAX_Decisions.md) — Reporting, DAX, and dashboard design decisions
+- [Power BI & DAX Decisions](06_Docs/03_PowerBI_DAX_Decisions.md) — Reporting, DAX, and dashboard design decisions
 - [Analytical Decisions](06_Docs/04_Analytical_Decisions.md) — Reasoning behind the analytical methods used
 - [Trade-offs & Limitations](06_Docs/05_Tradeoffs_Limitations.md) — Project limitations, compromises, and future extensions
 - [KPI Dictionary](06_Docs/06_KPI_Dictionary.md) — Definitions and calculation logic for dashboard KPIs
