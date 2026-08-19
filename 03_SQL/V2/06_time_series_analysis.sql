@@ -25,6 +25,19 @@ Data Sources:
 
 /*
 ---------------------------------------------------------
+SELECT DATABASE
+---------------------------------------------------------
+Uses the project database containing the staging,
+fact, and supporting tables.
+---------------------------------------------------------
+*/
+
+USE AdvancedSalesAnalytics;
+GO
+    
+
+/*
+---------------------------------------------------------
 MONTHLY REVENUE TREND
 ---------------------------------------------------------
 Aggregates monthly sales to reveal long-term trends
