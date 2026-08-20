@@ -286,7 +286,65 @@ The visualization should expose the underlying analytical dimensions rather than
 
 ---
 
-## 3.9 AOV as a Separate Customer Metric
+# 3.9 RFM Snapshot and Date Filtering
+
+### Decision
+
+The RFM segmentation is treated as an **FY2018 point-in-time snapshot** rather than a time-varying metric.
+
+The RFM model uses customer behavior up to the end of FY2018 to calculate:
+
+* Recency
+* Frequency
+* Monetary value
+* RFM scores
+* Customer segments
+
+### Why?
+
+RFM is intended to answer:
+
+> **What was the customer's behavioral and value status at the end of the available analysis period?**
+
+It is not intended to answer:
+
+> **What was the customer's RFM status during each historical fiscal year?**
+
+Allowing the FY2018 RFM classification to respond to earlier date filters could combine historical period metrics with a customer classification calculated from later behavior.
+
+For example, filtering the report to FY2016 while displaying the FY2018 RFM segment would not represent the customer's FY2016 segment.
+
+### Power BI Design
+
+The RFM snapshot is therefore treated independently from the report's normal time filtering.
+
+Date filters should not imply that the RFM segmentation is being recalculated for the selected historical period.
+
+The RFM visuals may still respond to appropriate non-date dimensions, such as:
+
+* Region
+* Segment
+* Category
+
+where those filters are analytically meaningful.
+
+### Limitation
+
+A dynamically changing historical RFM analysis would require separate RFM snapshots for multiple points in time.
+
+For example:
+
+```text
+Customer
+    │
+    ├── FY2016 Snapshot
+    ├── FY2017 Snapshot
+    └── FY2018 Snapshot
+```
+
+---
+
+## 3.10 AOV as a Separate Customer Metric
 
 ### Decision
 
@@ -310,7 +368,7 @@ Keeping AOV separate allows the dashboard to evaluate order value independently 
 
 ---
 
-# 3.10 Cohort Retention Matrix
+# 3.11 Cohort Retention Matrix
 
 ### Decision
 
@@ -341,7 +399,7 @@ The matrix prioritizes **pattern recognition** over precise point-by-point compa
 
 ---
 
-# 3.11 Growth & Risk as a Separate Analytical Page
+# 3.12 Growth & Risk as a Separate Analytical Page
 
 ### Decision
 
@@ -369,7 +427,7 @@ This page therefore combines:
 
 ---
 
-# 3.12 Growth KPI Design
+# 3.13 Growth KPI Design
 
 ### Decision
 
@@ -397,7 +455,7 @@ This avoids filling the KPI section with metrics that provide largely redundant 
 
 ---
 
-# 3.13 Risk KPI Design
+# 3.14 Risk KPI Design
 
 ### Decision
 
@@ -438,7 +496,7 @@ They are not predictive churn or revenue forecasts.
 
 ---
 
-# 3.14 Revenue At Risk vs Revenue Opportunity
+# 3.15 Revenue At Risk vs Revenue Opportunity
 
 ### Decision
 
@@ -460,7 +518,7 @@ This creates a more actionable view of customer behavior than simply reporting t
 
 ---
 
-# 3.15 Data Completeness Indicator
+# 3.16 Data Completeness Indicator
 
 ### Decision
 
@@ -478,7 +536,7 @@ The indicators respond to the active filter context, allowing users to see the d
 
 ---
 
-# 3.16 Bookmark-Based Page Navigation
+# 3.17 Bookmark-Based Page Navigation
 
 ### Decision
 
@@ -503,7 +561,7 @@ Navigation should improve usability without unexpectedly changing the analytical
 
 ---
 
-# 3.17 Tooltip Design
+# 3.18 Tooltip Design
 
 ### Decision
 
@@ -527,7 +585,7 @@ This allows the dashboard to maintain a clean visual hierarchy while still provi
 
 ---
 
-# 3.18 Visual Hierarchy
+# 3.19 Visual Hierarchy
 
 ### Decision
 
@@ -553,7 +611,7 @@ This prevents the dashboard from becoming a collection of equally weighted chart
 
 ---
 
-# 3.19 Filter Context and Navigation
+# 3.20 Filter Context and Navigation
 
 ### Decision
 
