@@ -59,6 +59,8 @@ This became the primary analytical direction of V2.
 
 RFM and cohort analysis were intentionally kept as complementary analyses.
 
+The RFM analysis represents a **FY2018 point-in-time snapshot**, while cohort analysis examines customer retention across historical periods.
+
 ### Why?
 
 They answer different questions.
