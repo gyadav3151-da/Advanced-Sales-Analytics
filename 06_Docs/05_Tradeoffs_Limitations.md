@@ -78,15 +78,61 @@ The RFM segments should therefore be interpreted as **relative behavioral groups
 
 ---
 
-# 5.5 Revenue At Risk Is Not Predictive Churn
+# 5.5 RFM Is a FY2018 Snapshot
+
+The RFM model represents a point-in-time snapshot calculated using customer behavior up to the end of FY2018.
+
+It therefore describes customer status at the end of the available analysis period rather than providing a historical RFM classification for every fiscal year.
+
+### Implication
+
+The RFM segmentation should not be interpreted as a time-series measure.
+
+For example, a FY2018 customer classified as:
+
+```text
+Champion
+```
+
+does not necessarily mean that the same customer would have been classified as a Champion in FY2016.
+
+Similarly, applying an earlier fiscal-year filter to an FY2018 RFM classification could combine historical transaction metrics with a later customer classification.
+
+### Design Response
+
+The Power BI report therefore treats the RFM snapshot independently from historical date filtering.
+
+A dynamically historical RFM model would require multiple point-in-time snapshots, which was outside the scope of V2.
+
+### Production Extension
+
+A production implementation could maintain periodic RFM snapshots:
+
+```text
+Customer
+    ↓
+Snapshot Date
+    ↓
+RFM Metrics
+    ↓
+RFM Score
+    ↓
+RFM Segment
+```
+
+This would allow customer segments to be analyzed as they changed over time.
+
+---
+
+# 5.6 Revenue At Risk Is Not Predictive Churn
+
+It represents historical revenue associated with this segment.
 
 Revenue At Risk is based on customers classified as:
 
 ```text
 At Risk - High Value
 ```
-
-It represents historical revenue associated with this segment.
 
 It does not calculate:
 
@@ -102,7 +148,7 @@ A production implementation could extend this analysis with behavioral or predic
 
 ---
 
-# 5.6 Revenue Opportunity Is Not Forecast Revenue
+# 5.7 Revenue Opportunity Is Not Forecast Revenue
 
 Revenue Opportunity is based on the historical revenue associated with:
 
@@ -124,7 +170,7 @@ The metric identifies a **potential opportunity area**, rather than estimating t
 
 ---
 
-# 5.7 SQL vs Power BI Logic
+# 5.8 SQL vs Power BI Logic
 
 Some logic exists in SQL while other logic exists in DAX.
 
@@ -150,7 +196,7 @@ This separation improves flexibility within Power BI, but means that not every a
 
 ---
 
-# 5.8 Fiscal Logic in the Reporting Layer
+# 5.9 Fiscal Logic in the Reporting Layer
 
 Fiscal Year and Fiscal Year Month were implemented in DAX rather than in the SQL calendar dimension.
 
@@ -164,7 +210,7 @@ For a production environment supporting multiple reporting systems, centralizing
 
 ---
 
-# 5.9 Dataset Scale
+# 5.10 Dataset Scale
 
 The Superstore dataset contains approximately 10,000 transaction records.
 
@@ -183,7 +229,7 @@ The project therefore focuses on demonstrating **analytical design and reasoning
 
 ---
 
-# 5.10 No Predictive Modeling
+# 5.11 No Predictive Modeling
 
 The project intentionally remains within descriptive and diagnostic analytics.
 
@@ -202,7 +248,7 @@ Predictive modeling could be added as a future extension once the descriptive an
 
 ---
 
-# 5.11 No Real-Time Data Pipeline
+# 5.12 No Real-Time Data Pipeline
 
 The project operates on a static dataset and does not implement:
 
@@ -217,7 +263,7 @@ The workflow demonstrates an analytical pipeline rather than a production-grade 
 
 ---
 
-# 5.12 Dashboard Complexity vs Usability
+# 5.13 Dashboard Complexity vs Usability
 
 Additional analytical features create a trade-off between analytical depth and visual simplicity.
 
@@ -235,7 +281,7 @@ This keeps the dashboard focused while allowing deeper analysis through interact
 
 ---
 
-# 5.13 Trade-off Summary
+# 5.14 Trade-off Summary
 
 | Area                | Decision                                | Trade-off                                 |
 | ------------------- | --------------------------------------- | ----------------------------------------- |
@@ -250,7 +296,7 @@ This keeps the dashboard focused while allowing deeper analysis through interact
 
 ---
 
-# 5.14 Future Extensions
+# 5.15 Future Extensions
 
 The current architecture provides a foundation for future improvements.
 
