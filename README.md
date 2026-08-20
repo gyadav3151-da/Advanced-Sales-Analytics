@@ -267,6 +267,14 @@ RFM evaluates customers across three dimensions:
 
 Customers are scored and grouped into behavioral segments.
 
+### RFM Snapshot Scope
+
+The RFM model is calculated as a point-in-time snapshot using customer behavior up to the end of FY2018.
+
+Therefore, the RFM segments represent the customer's status at the end of the available analysis period rather than a dynamically recalculated historical segment for each fiscal year.
+
+The RFM snapshot is intentionally treated separately from time-based report filtering to avoid combining historical metrics with an FY2018 customer classification.
+
 ### RFM Segments
 
 The final segmentation includes:
