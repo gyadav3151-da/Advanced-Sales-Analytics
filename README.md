@@ -563,9 +563,9 @@ Based on the analysis, several areas warrant further business attention:
 
 ![Executive Overview](05_Images/V2/01_Executive_Overview.png)
 
-### Customer Analytics
+### Customer Value & Retention
 
-![Customer Analytics](05_Images/V2/02_Customer_Analysis.png)
+![Customer Value_&_Retention](05_Images/V2/02_Customer_Value_&_Retention.png)
 
 ### Product Performance
 
